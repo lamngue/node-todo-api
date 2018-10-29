@@ -1,3 +1,4 @@
+require('./config/config.js');
 const express = require('express');
 const bodyParser = require('body-parser');
 const {ObjectID} = require('mongodb');
@@ -6,7 +7,7 @@ var {Todo} = require('./models/todo.js');
 var {User} = require('./models/user.js');
 const _ = require('lodash');
 var app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 app.use(bodyParser.json());
 app.post('/todos',(req,res)=>{
 	var todo = new Todo({
